@@ -52,26 +52,26 @@ function displayBagSummary() {
     totalDiscount += item.original_price - item.current_price;
 
   });
-  let finalPayment = totalMRP - totalDiscount + 99;
+  let finalPayment = totalMRP - totalDiscount + CONVENIENCE_FEE;
   bagSummaryElement.innerHTML = `
     <div class="bag-details-container">
       <div class="price-header">PRICE DETAILS (${totalItem} Items) </div>
       <div class="price-item">
         <span class="price-item-tag">Total MRP</span>
-        <span class="price-item-value">₹${totalMRP}</span>
+        <span class="price-item-value">Rs${totalMRP}</span>
       </div>
       <div class="price-item">
         <span class="price-item-tag">Discount on MRP</span>
-        <span class="price-item-value priceDetail-base-discount">₹${totalDiscount}</span>
+        <span class="price-item-value priceDetail-base-discount">Rs${totalDiscount}</span>
       </div>
       <div class="price-item">
         <span class="price-item-tag">Convenience Fee</span>
-        <span class="price-item-value">₹ 99</span>
+        <span class="price-item-value">Rs 99</span>
       </div>
       <hr>
       <div class="price-footer">
         <span class="price-item-tag">Total Amount</span>
-        <span class="price-item-value">₹${finalPayment}</span>
+        <span class="price-item-value">Rs${finalPayment}</span>
       </div>
     </div>
     <button class="btn-place-order">
